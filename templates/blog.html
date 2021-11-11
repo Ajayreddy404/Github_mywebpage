@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block blogactive %}active{% endblock blogactive %}
+{% block body %}
+
+<div class="container">
+    <h1 class="my-3">Welcome to Ajay's Blog</h1>
+    {% for blog in blogs %}
+
+    <div class="my-4">
+
+        <h4 class="text-dark"><a href="/blogpost/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h4>
+        <!-- <div class="my-0"> -->
+        {{blog.content|slice:245}}
+        <!-- </div> -->
+
+        <a href="/blogpost/{{blog.slug}}" class="text-dark"><button type="button" class="btn btn-link">Read
+                more...</button></a>
+
+    </div>
+
+    {% endfor %}
+    <div class="d-flex">
+        <!-- <div class="col-md-12 bg-light text-right"> -->
+        <button class="btn btn-dark">Previous</button>
+        <button class="btn btn-dark ml-auto">Next</button>
+        <!-- </div> -->
+    </div>
+</div>
+{% endblock body %}
