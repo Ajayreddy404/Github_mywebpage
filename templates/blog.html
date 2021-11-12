@@ -10,7 +10,7 @@
 
         <h4 class="text-dark"><a href="/blogpost/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h4>
         <!-- <div class="my-0"> -->
-        {{blog.content|slice:245}}
+        {{blog.content|slice:245 | safe}}
         <!-- </div> -->
 
         <a href="/blogpost/{{blog.slug}}" class="text-dark"><button type="button" class="btn btn-link">Read
